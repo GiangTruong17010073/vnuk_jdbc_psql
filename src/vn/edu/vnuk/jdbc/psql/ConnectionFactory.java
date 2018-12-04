@@ -10,9 +10,9 @@ public class ConnectionFactory {
 		try { 
 			return DriverManager.getConnection(
 				"jdbc:postgresql://Localhost/Giang",
-				"Giang",
-				"1234"
-				);
+				System.getenv("db_user"), 
+				System.getenv("db_password")
+			);
 		}
 		catch (SQLException e) { throw new RuntimeException(e);
 		}
